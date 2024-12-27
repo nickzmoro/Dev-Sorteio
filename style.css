@@ -35,16 +35,17 @@ main {
     }
 
     .inputs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+
         input {
             padding: 15px 10px;
             border-radius: 5px;
             background: #00000054;
             border: 1px solid #ffffff3f;
             color: #ffffffc0;
-        }
-
-        input:nth-child(1) {
-            margin-right: 10px;
         }
     }
 
