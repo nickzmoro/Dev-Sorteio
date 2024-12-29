@@ -7,7 +7,14 @@ function randomNumberGenerate() {
     const minValue = Math.ceil(document.querySelector("#input-min").value)
     const maxValue = Math.floor(document.querySelector("#input-max").value)
 
-    const result = Math.floor(Math.random() * (maxValue - minValue + 1) + minValue)
+    const showResult = document.querySelector(".show-result")
 
-    alert(`Muito bem, seu número sorteado foi: ${result}`)
+    if (minValue >= maxValue) {
+        showResult.innerHTML = "O valor mínimo tem que ser MENOR que o valor máximo"
+    } else if (minValue < 0) {
+        showResult.innerHTML = "O valor mínimo tem que ser MAIOR que 0"
+    } else {
+        const result = Math.floor(Math.random() * (maxValue - minValue + 1) + minValue)
+        showResult.innerHTML = `Muito bem, seu número sorteado foi: ${result}`
+    }
 }
